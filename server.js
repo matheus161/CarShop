@@ -4,7 +4,7 @@ const env = require("./env.js")
 
 const start = async () => {
     await mongoose.connect(env.db.mongoURI, env.db.options);
-    app.listen(8080, (err) => {
+    app.listen(process.env.port || 8080 , (err) => {
       if (err) {
         return console.log("err: ", err);
       }
